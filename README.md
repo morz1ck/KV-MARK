@@ -3,7 +3,7 @@
 
 [KV-mark]:  {FFFFFF}You are welcome {FF69B4}Leonardo_Morz
 
-- Leonardo_Morz[220]: А-1
+Leonardo_Morz[220]: А-1
   
 /setmark
 
