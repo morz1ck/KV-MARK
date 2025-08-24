@@ -1,8 +1,8 @@
-script_name('Learning')
+script_name('KV-mark')
 script_author('morz1ck')
  
 require "lib.moonloader"
-local tag = '[KV-mark]: ', 0xFF1493
+local tag = '[KV-mark]: '
 local sampev = require("lib.samp.events");
 local imgui = require("imgui");
 local cordX = nil;
@@ -13,10 +13,9 @@ function main()
  
     res, id = sampGetPlayerIdByCharHandle(PLAYER_PED);
     nick = sampGetPlayerNickname(id);
-    sampAddChatMessage(tag .. " {FFFFFF}You are welcome {FF69B4}" .. nick, 0xFF1493);
+    sampAddChatMessage(tag .. "{FFFFFF}You are welcome {FF69B4}" .. nick, 0xFF1493);
     sampRegisterChatCommand("setmark", cmd_setmark);
-    sampRegisterChatCommand('hel', cmd_hello);
- 
+
     wait(-1);
 end
  
@@ -25,17 +24,11 @@ function cmd_setmark()
         cX, cY, cZ = getCharCoordinates(playerPed)
         cX = math.ceil(cX)
         cY = math.ceil(cY)
-        sampAddChatMessage(tag .. "{ffffff}Waypoint "..kvadY.."-"..kvadX.." is ready. ", 0xFF1493)
+        sampAddChatMessage(tag .. "{ffffff}Waypoint {FF1493}"..kvadY.."-"..kvadX.."{FFFFFF} is ready. ", 0xFF1493)
         placeWaypoint(cordX, cordY, 0);
     else
       sampAddChatMessage(tag .. '{ffffff}There is no sector', 0xFF1493)
     end
-end
- 
- 
-function cmd_hello(player_id)
-    player_nickname = sampGetPlayerNickname(player_id)
-    sampSendChat("Good evening, ".. player_nickname .. ".")
 end
  
 function sampev.onServerMessage(color, lcs)
